@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+}
+
+body {
+  @apply font-sans antialiased text-zinc-900 transition-colors duration-500;
+}
+
+h1, h2, h3, h4 {
+  @apply font-display tracking-tight;
+}
+
+/* Background A: Sân khấu Scratch */
+.bg-scratch-stage {
+  background: linear-gradient(135deg, #fff9e6 0%, #fff0cc 100%);
+  background-image: radial-gradient(#ffcc00 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Background B: Không gian sáng tạo */
+.bg-creative-space {
+  background-color: #f0f9ff;
+  background-image: 
+    radial-gradient(at 0% 0%, hsla(199,100%,95%,1) 0, transparent 50%), 
+    radial-gradient(at 50% 0%, hsla(187,100%,95%,1) 0, transparent 50%), 
+    radial-gradient(at 100% 0%, hsla(199,100%,95%,1) 0, transparent 50%);
+}
+
+/* Background C: Phòng máy vui nhộn */
+.bg-fun-lab {
+  background-color: #fdf2f8;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f472b6' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.content-frame {
+  @apply bg-white/80 backdrop-blur-md rounded-[2rem] border border-white/20 shadow-xl shadow-zinc-200/50 p-8 transition-all;
+}
+
+.btn-easy {
+  @apply bg-emerald-100 text-emerald-700 hover:bg-emerald-200 border-emerald-200;
+}
+
+.btn-medium {
+  @apply bg-orange-100 text-orange-700 hover:bg-orange-200 border-orange-200;
+}
+
+.btn-hard {
+  @apply bg-blue-900 text-white hover:bg-blue-950 border-blue-950;
+}
