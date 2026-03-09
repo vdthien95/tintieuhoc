@@ -317,7 +317,7 @@ export default function App() {
     }
 
     try {
-      const response = await fetch('/api/auth/teacher/register', {
+      const response = await fetch('Firebase Authentication', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, name, schoolName, phone, password })
@@ -342,7 +342,7 @@ export default function App() {
     if (!email || !password) return;
 
     try {
-      const response = await fetch('/api/auth/teacher/login', {
+      const response = await fetch('Firebase Authentication', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
@@ -372,7 +372,7 @@ export default function App() {
     if (forgotPasswordStep === 1) {
       // We still need to check if email exists on server
       try {
-        const response = await fetch('/api/auth/teacher/login', {
+        const response = await fetch('Firebase Authentication', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email: forgotPasswordForm.email, password: 'dummy' })
@@ -407,7 +407,7 @@ export default function App() {
       }
 
       try {
-        const response = await fetch('/api/auth/teacher/forgot-password', {
+        const response = await fetch('Firebase Authentication', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email: forgotPasswordForm.email, newPassword: forgotPasswordForm.newPassword })
